@@ -40,10 +40,10 @@ if (NOT raylib_FOUND) # If there's none, fetch and build raylib
 endif()
 
 # Source Management
-file(GLOB source_files ${CMAKE_CURRENT_SOURCE_DIR}/src/*) #doesnt work idk
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
 
 # Linking and such
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME} ${SRC_FILES})
 target_link_libraries(${PROJECT_NAME} raylib)
 
 # Resource management
